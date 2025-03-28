@@ -30,8 +30,7 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="row">
+    
             <div class="col-centered">
                 <div class="card text-bg-dark">
                     <img src="images/pets-main.jpg" class="img-fluid" alt="picture of cats and dogs sitting">
@@ -41,7 +40,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+     
 </section>
 <%@include file="footer.jsp"%>
