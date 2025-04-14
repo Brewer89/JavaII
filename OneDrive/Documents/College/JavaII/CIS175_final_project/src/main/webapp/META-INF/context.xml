@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/CIS175_final_project"/>
+<Context  antiJARLocking="true" path="/CIS175_final_project">
+  <Resource name="jdbc/adoption_center" 
+              auth="Container"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/adoption_center?autoReconnect=true"
+              username="root" 
+              password="Maxton0708"
+              maxActive="100" 
+              maxIdle="30" 
+              maxWait="10000"  
+              logAbandoned="true" 
+              removeAbandoned="true"
+              removeAbandonedTimeout="60" 
+              type="javax.sql.DataSource" />
+</Context>

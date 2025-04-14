@@ -8,9 +8,23 @@
         <servlet-name>ContactForm</servlet-name>
         <url-pattern>/ContactForm</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AnimalController</servlet-name>
+        <servlet-class>cis175_final_project.controllers.AnimalController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>AnimalController</servlet-name>
+        <url-pattern>/adoption_center</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/adoption_center</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 </web-app>

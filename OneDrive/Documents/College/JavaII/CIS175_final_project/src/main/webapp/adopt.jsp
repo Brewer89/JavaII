@@ -5,6 +5,7 @@
 --%>
 
 <%@include file="header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -31,5 +32,30 @@
   </div>
 </nav>
         <h1>Hello World!</h1>
+        <a href="adoption_center?action=manage">See all animals</a>
+        <h1>Animals available for adoption </h1>
+    <table>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <c:forEach var="allAnimals" items="${allAnimals}">
+            <tr>
+                <td>${allAnimals.type}</td>
+                <td>${allAnimals.color}</td>
+                <td>${allAnimals.weight}</td>
+                <!--td>&nbsp;</td>
+                <td>
+                    <form action="goldenoaks" method="post">
+                        <input type="hidden" name="action" value="doCheckin"/>
+                        <input type="hidden" name="checkoutNumber"
+                               value="${checkout.checkoutNumber}"/>
+                        <input type="submit" value="Check in"/>
+                    </form>
+                </td-->
+            </tr>
+        </c:forEach>
+    </table>
 </section>
 <%@include file="footer.jsp"%>

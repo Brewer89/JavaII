@@ -4,18 +4,31 @@
  */
 package com.mycompany.cis175_final_project;
 
+
+
+import java.io.Serializable;
+
+
 /**
  *
  * @author ijc19
  */
-public class Contact {
+
+
+public class Contact implements Serializable {
     
+    
+    private long customerID;
     private String email;
     private String text;
     
     public Contact(){
     }
 
+    public long getCustomerID() {
+        return customerID;
+    }
+    
     public String getEmail() {
         return email;
     }
@@ -32,6 +45,8 @@ public class Contact {
         this.text = text;
     }
     
-    
+    public void setCustomerID (long customerID) {
+        this.customerID = customerID;
+    }
     
 }
