@@ -18,6 +18,7 @@ public class Animal implements Serializable {
     private String type;
     private String color;
     private float weight;
+    private String image;
     
     public Animal() {
         type = "";
@@ -80,5 +81,17 @@ public class Animal implements Serializable {
         this.weight = weight;
     }
     
-    
+     /**
+     * @return the image url
+     */
+    public String getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image url to set
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

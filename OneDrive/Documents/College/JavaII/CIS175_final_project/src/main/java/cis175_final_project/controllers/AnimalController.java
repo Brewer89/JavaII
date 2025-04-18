@@ -92,6 +92,7 @@ public class AnimalController extends HttpServlet {
                 a.setType(rs.getString("type"));
                 a.setColor(rs.getString("color"));
                 a.setWeight(rs.getFloat("weight"));
+                a.setImage(rs.getString("image_url"));
                 allAnimals.add(a);
             }
         }
