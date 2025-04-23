@@ -31,7 +31,7 @@
             </div>
         </div>
     </nav>
-    <body>
+    <div class="content">
     <h1>Find your next furry friend here</h1>
     <p>We accept any and all breeds of cats and dogs for adoption. We have a wide range of options 
         available if you are looking to adopt a new friend. We get new animals all the time so if you 
@@ -46,15 +46,19 @@
     <h1>Adoption Fees</h1>
     <b>DOG under 6 months old | $250</b><br>
     <b>DOG | $200</b><br>
-    <b>CAT | $125</b>
-    </body>
-    <a href="adoption_center?action=manage">See all animals</a>
+    <b>CAT | $125</b><br>
+
+    <a href="adoption_center?action=manage">See all animals</a><br>
+    <a href="adoption_center?action=dogs">See all dogs</a><br>
+    <a href="adoption_center?action=cats">See all cats</a>
+    
     <h1>Animals available for adoption </h1>
     <table>
         <tr>
             <th>Animal type</th>
             <th>Color</th>
             <th>Weight</th>
+            <th>Picture</th>
         </tr>
         <c:forEach var="allAnimals" items="${allAnimals}">
             <tr>
@@ -62,17 +66,9 @@
                 <td>${allAnimals.color}</td>
                 <td>${allAnimals.weight}</td>
                 <td><img src=${allAnimals.image} width="200px" height="200px"/></td>
-                <!--td>&nbsp;</td>
-                <td>
-                    <form action="goldenoaks" method="post">
-                        <input type="hidden" name="action" value="doCheckin"/>
-                        <input type="hidden" name="checkoutNumber"
-                               value="${checkout.checkoutNumber}"/>
-                        <input type="submit" value="Check in"/>
-                    </form>
-                </td-->
             </tr>
         </c:forEach>
     </table>
+    </div>
 </section>
 <%@include file="footer.jsp"%>

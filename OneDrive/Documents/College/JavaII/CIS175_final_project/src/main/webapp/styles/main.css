@@ -6,6 +6,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : Mar 9, 2025, 2:55:29 PM
     Author     : ijc19
 */
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0vh 10vh 5vh 10vh
+}
 .center-text {
     text-align: center;
 }
@@ -38,4 +45,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 .address{
     align-content: center;
+}
+table{
+   
+    width: 100%;
+    table-layout: fixed;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #ccc; /* Optional: adds borders for better visuals */
 }

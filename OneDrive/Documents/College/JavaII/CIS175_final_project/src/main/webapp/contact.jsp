@@ -32,7 +32,7 @@
     </nav>
     <div class="main">
     <h1>Contact Us</h1>
-    <form action="ContactForm" method="post">
+    <form action="adoption_center" method="post">
         <div class="mb-3">
             <div class="col-sm-6">
                 <label for="InputEmail1" class="form-label">Email address</label>
