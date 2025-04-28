@@ -17,7 +17,7 @@
         <h6>Monday      12-5</h6>
         <h6>Tuesday     9-5</h6>
         <h6>Wednesday   9-5</h6>
-        <h6>Thursday    9-5</h6>
+        <h6>Thursday    9-5</h6> 
         <h6>Friday      12-8</h6>
         <h6>Saturday    12-5</h6>
     </div>

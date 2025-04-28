@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 
 public class Animal implements Serializable {
-
+    //variables
     private long animalID;
     private String type;
     private String color;

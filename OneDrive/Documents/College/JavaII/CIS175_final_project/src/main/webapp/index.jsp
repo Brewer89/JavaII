@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.jsp">Contact</a>
                     </li>
+                    <li class="nav-item">
+          <a class="nav-link" href="admin.jsp">Log In</a>
+        </li>
                 </ul>
             </div>
         </div>

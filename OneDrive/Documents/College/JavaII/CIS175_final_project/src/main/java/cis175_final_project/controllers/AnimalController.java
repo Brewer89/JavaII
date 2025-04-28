@@ -51,28 +51,39 @@ public class AnimalController extends HttpServlet {
                 .forward(request, response);
     }
 
-    @Override
-    public void doPost(HttpServletRequest request,
-            HttpServletResponse response)
-            throws ServletException, IOException {
+   @Override
+public void doPost(HttpServletRequest request,
+        HttpServletResponse response)
+        throws ServletException, IOException {
+
+    String action = request.getParameter("action");
+    String url = "";
+
+    if ("add".equals(action)) {
+        int result = add(request, response);
+        response.sendRedirect("admin.jsp");
+        return;
+    } else {
         String email = request.getParameter("email");
         request.setAttribute("email", email);
         String text = request.getParameter("textarea");
         request.setAttribute("text", text);
         String appt = request.getParameter("apptcheck");
         request.setAttribute("appt", appt);
+
         if (appt != null) {
             String date = request.getParameter("inputdate");
             String time = request.getParameter("inputtime");
             request.setAttribute("date", date);
             request.setAttribute("time", time);
         }
-        String url = "";
-                url = "/results.jsp";
-        
-        getServletContext().getRequestDispatcher(url)
-                .forward(request, response);
+
+        url = "/results.jsp";
     }
+    getServletContext().getRequestDispatcher(url)
+            .forward(request, response);
+}
+
 
     private String manage(HttpServletRequest request,
             HttpServletResponse response) {
@@ -183,6 +194,44 @@ public class AnimalController extends HttpServlet {
         }
         request.setAttribute("allAnimals", allAnimals);
         return "/adopt.jsp";
+    }
+    
+    private int add(HttpServletRequest request,
+            HttpServletResponse response) {
+        
+        String type = request.getParameter("type");
+        String weight = request.getParameter("weight");
+        float parseFloat;
+        try {
+            parseFloat = Float.parseFloat(weight);
+        }catch (NumberFormatException e){
+            return 0;
+        }
+        String color = request.getParameter("animalColor");
+        String image = "\"images/" + request.getParameter("image_url") + "\"";
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection();
+        if (connection == null) {
+            System.out.println("fail");
+        }
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String query = "INSERT INTO animal(type, color, weight, image_url) " + "VALUES (?, ?, ?, ?)";
+        try{
+            ps = connection.prepareStatement(query);
+            ps.setString(1, type);
+            ps.setString(2, color);
+            ps.setFloat(3, parseFloat);
+            ps.setString(4, image);
+            return ps.executeUpdate();
+        }catch (SQLException e) {
+            System.out.println(e);
+            return 0;
+        } finally {
+            DBUtil.closeResultSet(rs);
+            DBUtil.closePreparedStatement(ps);
+            pool.freeConnection(connection);
+        }
     }
 
 }
